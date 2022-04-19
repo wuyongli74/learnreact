@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/immutable/3.8.2/immutable.min.js"
+        integrity="sha512-myCdDiGJRYrvRb/VuJ67ljifYTJdc1jdEvL4c4ftX9o3N6EAnmD83c/7l2/91RCINZ7c8w21tiXDT7RDFjdc3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        const im = Immutable;
+
+        // // Map的使用
+        // const info = {
+        //     name: "kbo",
+        //     age: 30,
+        //     friend: {
+        //         name: "jag",
+        //         age: 24,
+        //     },
+        // };
+
+        // Map:映射---对对象做转换
+        // const infoIN = im.Map(info);
+
+        // const obj = infoIN;
+        // set--更改值，
+        // const infoIN2 = infoIN.set("name", "why");
+        // get---取值
+        // console.log(obj.get("name"));
+        // console.log(infoIN2.get("name"));
+
+        // // List的使用
+        // const names = ["why", "bojo", "naf"];
+        // // const arr = names;
+        // // names[0] = "why";
+        // // console.log(arr);
+        // const namesIN = im.List(names);
+        // const arrIN = namesIN.set(0, "why");
+        // console.log(namesIN.get(0));
+        // console.log(arrIN.get(0));
+
+        const info = {
+            name: "kbo",
+            age: 30,
+            friend: {
+                name: "jag",
+                age: 24,
+            },
+        };
+
+        // const infoIN = im.Map(info);
+        const infoIN = im.fromJS(info);
+        console.log(infoIN.get("friend"));
+    </script>
+</body>
+
+</html>

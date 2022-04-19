@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const names = ['abc', 'cba', 'nbd', 'dka'];
+
+    /**
+     * names.map(回调函数(箭头函数), 给前面函数绑定this)
+     * 回调函数有三个参数： names.map((item, index, arr) => { })
+     *    参数一：执行时的对应元素
+     *    参数二：对应的下标值
+     *    参数三：完整的数组对象
+     */
+
+    var namesArr = names.map((item, index, arr) => {
+      return item + 'ooo'
+    })
+
+    console.log(namesArr);
+
+    // var namesArr1 = names.forEach((item) => {
+    //   return item + '99o'
+    // })
+
+    // console.log(namesArr1);
+
+    const numbers = ['123', '345', '4', '32']
+    const nums = numbers.filter((item, index, arr) => {
+      return item >= 50;
+    })
+
+    console.log(nums);
+
+    const nums2 = numbers.filter((item) => {
+      return item % 2 === 0;
+    })
+
+    console.log(nums2);
+  </script>
+</body>
+
+</html>

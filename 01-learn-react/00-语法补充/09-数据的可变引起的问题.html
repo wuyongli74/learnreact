@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //  引用ImmutableJS
+        const info = {
+            name: "why",
+            age: 10,
+        };
+
+        // 拷贝会影响性能
+        //  const obj = { ...info };
+
+        const obj = info;
+        info.name = "kobo";
+        console.log(obj.name);
+    </script>
+</body>
+
+</html>

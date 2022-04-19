@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <!-- 1.添加React的依赖 -->
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <!-- 2.编写React代码 -->
+  <script type="text/babel">
+    function getSizeImage (imgUrl, size) {
+      return imgUrl + `?param=${size}×${size}`
+    }
+
+    class App extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          title: "title属性",
+          imgUrl: "https://gimg3.baidu.com/search/src=http%3A%2F%2Fpics7.baidu.com%2Ffeed%2Fb17eca8065380cd7058b4e16a5fd553d5b8281f3.jpeg%3Ftoken%3D649f41b572b55d8c67fa2eedd5338522&refer=http%3A%2F%2Fwww.baidu.com&app=2021&size=f360,240&n=0&g=0n&q=75&fmt=auto?sec=1646499600&t=7cb7127560e169252a636e087c3da7ff",
+          link: "http://www.baidu.com",
+          active: true
+        }
+      }
+
+      render () {
+        const { title, imgUrl, active, link } = this.state
+        return (
+          <div>
+            {/*1.绑定普通属性*/}
+            <h2 title={title}>我是标题</h2>
+            <img src={getSizeImage(imgUrl, 40)} alt="" />
+            <a href={link} target="_blank">百度一下</a>
+
+            {/*2.绑定class*/}
+            <div className="box title">我是div元素</div>
+            <div className={"box title" + (active ? 'active' : '')}>我是也div元素</div>
+            <label htmlFor=""></label>
+
+            {/*3.绑定style*/}
+            <div style={{ color: "red", fontSize: "30px" }}>我是div，绑定style属性</div>
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(<App />, document.getElementById('app'))
+  </script>
+</body>
+
+</html>

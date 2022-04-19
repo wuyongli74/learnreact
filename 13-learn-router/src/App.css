@@ -1,0 +1,14 @@
+a.active,
+a.link-active {
+  font-size: 30px;
+  margin: 10px;
+  color: rgb(82, 187, 247);
+}
+
+a {
+  margin: 10px;
+}
+a.about-active {
+  color: rgb(144, 218, 25);
+  font-size: 20px;
+}
